@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>University Tech Fest Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">TechFest</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#register">Register</a>
+      <a href="#calculators">Tools</a>
+    </nav>
+    <div class="login-box">
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section id="home" class="banner">
+    <h1>Welcome to University Tech Fest</h1>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="intro">
+    <h2>About the Event</h2>
+    <p>Join us for a celebration of technology, creativity, and innovation at our annual Tech Fest!</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <img src="assets/banner.jpg" alt="banner">
+    <img src="assets/img1.jpg" alt="Event 1">
+    <img src="assets/img2.jpg" alt="Event 2">
+    <img src="assets/img3.jpg" alt="Event 3">
+    <img src="assets/img4.jpg" alt="Event 4">
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section id="register">
+    <h2>Register Now</h2>
+    <form action="/serverlogic" method="post" id="regForm">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label>Name: <input type="text" name="name" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Phone: <input type="tel" name="phone" pattern="[0-9]{10}" required></label>
+        <label>DOB: <input type="date" name="dob" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Event Choices</legend>
+        <label><input type="radio" name="event" value="Coding" required> Coding</label>
+        <label><input type="radio" name="event" value="Robotics"> Robotics</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences</legend>
+        <label><input type="checkbox" name="pref" value="Workshops"> Workshops</label>
+        <label><input type="checkbox" name="pref" value="Hackathons"> Hackathons</label>
+        <label><input type="checkbox" name="pref" value="Seminars"> Seminars</label>
+        <label><input type="checkbox" name="pref" value="Exhibitions"> Exhibitions</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Other Info</legend>
+        <label>Portfolio URL: <input type="url" name="portfolio"></label>
+        <label>Profile Photo: <input type="file" name="photo" accept="image/*" required></label>
+        <label>Bio: <textarea name="bio"></textarea></label>
+        <label>Department:
+          <select name="department" required>
+            <option value="">--Select--</option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>CIVIL</option>
+            <option>MECH</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <progress id="formProgress" value="0" max="100"></progress><br><br>
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+  </section>
+
+  <!-- CALCULATORS -->
+  <section id="calculators">
+    <h2>Utilities</h2>
+
+    <!-- BMI CALCULATOR -->
+    <div class="calc">
+      <h3>BMI Calculator</h3>
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <input type="number" id="height" placeholder="Height (cm)">
+      <button onclick="calcBMI()">Calculate BMI</button>
+      <p id="bmiResult"></p>
+    </div>
+
+    <!-- CURRENCY CONVERTER (jQuery keyup) -->
+    <div class="calc">
+      <h3>Currency Converter</h3>
+      <input type="number" id="inr" placeholder="INR">
+      <p>USD: <span id="usd">0</span></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

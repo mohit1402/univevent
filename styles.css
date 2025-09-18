@@ -1,0 +1,35 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; line-height: 1.5; }
+
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #222; color: #fff; padding: 10px 20px; position: fixed; width: 100%;
+}
+header .logo { font-size: 1.5em; font-weight: bold; }
+header nav a {
+  color: #fff; text-decoration: none; margin: 0 10px;
+}
+header .login-box input {
+  padding: 5px; margin-right: 5px;
+}
+
+.banner {
+  margin-top: 70px; height: 250px; background: url('assets/banner.jpg') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2em; text-shadow: 1px 1px 3px #000;
+}
+
+.intro, #register, #calculators { padding: 40px 20px; }
+
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;
+  padding: 20px;
+}
+.gallery img { width: 100%; border-radius: 8px; }
+
+form fieldset {
+  border: 1px solid #ccc; margin-bottom: 15px; padding: 15px; border-radius: 8px;
+}
+form label { display: block; margin: 8px 0; }
+progress { width: 100%; height: 20px; }
+
+.calc { border: 1px solid #ccc; padding: 15px; margin: 15px 0; border-radius: 8px; max-width: 300px; }
